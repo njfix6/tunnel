@@ -5,7 +5,7 @@ import (
 )
 
 func TestMakeDelete(t *testing.T) {
-  filename := "go-lang-file-test"
+  filename := "go-lang-folder-test"
   Delete(filename)
   created, _ := Create(filename)
   if created != true {
