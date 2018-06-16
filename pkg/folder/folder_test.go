@@ -1,4 +1,4 @@
-package files
+package folder
 
 import (
   "testing"
@@ -9,18 +9,18 @@ func TestMakeDelete(t *testing.T) {
   Delete(filename)
   created, _ := Create(filename)
   if created != true {
-    t.Error("File was not created")
+    t.Error("Folder was not created")
   }
   created, _ = Create(filename)
   if created != false {
-    t.Error("File created again")
+    t.Error("Folder created again")
   }
   removed, _ := Delete(filename)
   if removed != true {
-    t.Error("File wasn't removed")
+    t.Error("Folder wasn't removed")
   }
   removed, _ = Delete(filename)
   if removed != false {
-    t.Error("File removed again")
+    t.Error("Folder removed again")
   }
 }
