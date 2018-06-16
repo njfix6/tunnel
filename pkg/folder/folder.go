@@ -2,6 +2,7 @@ package folder
 
 import (
   "os"
+  "github.com/njfix6/tunnel/pkg/file"
 )
 
 func Create(path string) (b bool, e error) {
@@ -14,6 +15,10 @@ func Create(path string) (b bool, e error) {
   } else {
     return false, err
   }
+}
+
+func Exists(path string) bool {
+  return file.Exists(path)
 }
 
 func Delete(path string) (b bool, e error) {

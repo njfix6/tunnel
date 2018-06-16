@@ -1,7 +1,8 @@
-package files
+package file
 
 import (
   "os"
+  "fmt"
 )
 
 func Create(path string) (b bool, e error) {
@@ -16,6 +17,16 @@ func Create(path string) (b bool, e error) {
 	} else {
     return false, err
   }
+}
+
+func Exists(path string) (b bool) {
+  if _, err := os.Stat(path); os.IsNotExist(err) {
+    fmt.Println("doesn't exist")
+    return false
+  } else if err == nil {
+    return true
+  }
+  return false
 }
 
 func Delete(path string) (b bool, e error) {
