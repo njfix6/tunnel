@@ -9,6 +9,8 @@ git:
 
 go_import_path: github.com/njfix6/tunnel
 
+install:
+  - go get -t -v ./...
+  
 script:
- - go test -v ./...
- - go build
+  - go test -v ./...
