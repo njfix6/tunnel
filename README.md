@@ -1,4 +1,4 @@
-# tunnel
+# Tunnel
 
 ## Requirements
 1. [Go](https://golang.org/)
