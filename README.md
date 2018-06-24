@@ -14,7 +14,7 @@ Import using `import "github.com/njfix6/tunnel"` in your file.
 
 ### Examples
 ```
-import "github.com/njfix6/tunnel"
+import "github.com/njfix6/tunnel/pkg/tunnel"
 func main(){
   tunnel.Dig("TestApp")
 }
