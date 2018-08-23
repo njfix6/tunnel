@@ -3,6 +3,7 @@ package folder
 import (
   "os"
   "github.com/njfix6/tunnel/pkg/file"
+  "path/filepath"
 )
 
 func Create(path string) (b bool, e error) {
