@@ -3,7 +3,28 @@ package file
 import (
   "os"
   "fmt"
+  "io/ioutil"
 )
+
+func Read(path string) (string, error) {
+  b, err := ioutil.ReadFile(path) // just pass the file name
+  if err != nil {
+      return "", fmt.Errorf(err)
+  }
+  str := string(b)
+  return str
+}
+
+func ReadBytes(path string) ([]byte, error) {
+  jsonFile, err := os.Open("users.json")
+  if err != nil {
+		return jsonFile, fmt.Errorf(err)
+	}
+  defer jsonFile.Close()
+
+  byteValue, _ := ioutil.ReadAll(jsonFile)
+  return byteValue
+}
 
 func Create(path string) (b bool, e error) {
   var _, err = os.Stat(path)
