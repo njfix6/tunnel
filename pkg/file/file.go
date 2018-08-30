@@ -9,21 +9,21 @@ import (
 func Read(path string) (string, error) {
   b, err := ioutil.ReadFile(path) // just pass the file name
   if err != nil {
-      return "", fmt.Errorf(err)
+      return "", err
   }
   str := string(b)
-  return str
+  return str, nil
 }
 
 func ReadBytes(path string) ([]byte, error) {
-  jsonFile, err := os.Open("users.json")
+  file, err := os.Open("users.json")
   if err != nil {
-		return jsonFile, fmt.Errorf(err)
+		return nil, err
 	}
-  defer jsonFile.Close()
+  defer file.Close()
 
-  byteValue, _ := ioutil.ReadAll(jsonFile)
-  return byteValue
+  byteValue, _ := ioutil.ReadAll(file)
+  return byteValue, nil
 }
 
 func Create(path string) (b bool, e error) {
