@@ -16,13 +16,13 @@ func Read(path string) (string, error) {
 }
 
 func ReadBytes(path string) ([]byte, error) {
-  file, err := os.Open("users.json")
+  jsonFile, err := os.Open(path)
   if err != nil {
 		return nil, err
 	}
-  defer file.Close()
+  defer jsonFile.Close()
 
-  byteValue, _ := ioutil.ReadAll(file)
+  byteValue, _ := ioutil.ReadAll(jsonFile)
   return byteValue, nil
 }
 
